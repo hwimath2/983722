@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title id="pageTitle"></title>
-<!-- ==================== 게임 설정 및 문제 데이터======================= -->
 <script>
   /* 게임 설정 및 문제 데이터 */
   const gameConfig = {
@@ -315,13 +314,12 @@
       }
     ]
   };
-</script>
-  <style>
+</script>  <style>
     /* ======================= 디자인 변수 설정 (카테고리별 정리) ======================= */
     :root {
       /* ... (기존 CSS 변수 대부분 유지) ... */
       --start-button-text: "시험시작";
-      --submit-button-text: "결과전송";
+      --submit-button-text: "결과전송"; /* 이 변수는 더 이상 사용되지 않음 */
       --result-title-text: "시험 결과";
       --next-button-text: "다음문제";
       --prev-button-text: "이전문제";
@@ -368,10 +366,10 @@
       --next-button-dark: #262142;
       --prev-button-color: #3498db;
       --prev-button-dark: #2980b9;
-      --complete-button-color: #8957a1;
-      --complete-button-dark: #7a4391;
-      --submit-button-color: #f39c12;
-      --submit-button-dark: #d35400;
+      --complete-button-color: #f39c12; /* 기존 complete-button-color 유지 */
+      --complete-button-dark: #d35400; /* 기존 complete-button-dark 유지 */
+      /* --submit-button-color: #f39c12; /* 삭제 */
+      /* --submit-button-dark: #d35400; /* 삭제 */
       --option-color: #3498db;
       --option-dark: #2980b9;
       --option-selected-color: #f39c12;
@@ -484,8 +482,8 @@
     #prevButton:hover { box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 3px 0 rgba(0,0,0,0.1), 0 5px 0 var(--prev-button-dark), 0 7px 0 rgba(0,0,0,0.1), 0 9px 0 rgba(0,0,0,0.1), 0 0 12px rgba(0,0,0,0.2); }
     #nextButton.complete-button { background-color: var(--complete-button-color); box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 2px 0 rgba(0,0,0,0.1), 0 4px 0 var(--complete-button-dark), 0 6px 0 rgba(0,0,0,0.1), 0 8px 0 rgba(0,0,0,0.1), 0 0 10px rgba(0,0,0,0.2); }
     #nextButton.complete-button:hover { box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 3px 0 rgba(0,0,0,0.1), 0 5px 0 var(--complete-button-dark), 0 7px 0 rgba(0,0,0,0.1), 0 9px 0 rgba(0,0,0,0.1), 0 0 12px rgba(137, 87, 161, 0.4); }
-    #submitButton { background-color: var(--submit-button-color); box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 2px 0 rgba(0,0,0,0.1), 0 4px 0 var(--submit-button-dark), 0 6px 0 rgba(0,0,0,0.1), 0 8px 0 rgba(0,0,0,0.1), 0 0 10px rgba(0,0,0,0.2); margin: var(--button-margin); /* 제출 버튼은 독립적 마진 유지 */ }
-    #submitButton:hover { box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 3px 0 rgba(0,0,0,0.1), 0 5px 0 var(--submit-button-dark), 0 7px 0 rgba(0,0,0,0.1), 0 9px 0 rgba(0,0,0,0.1), 0 0 12px rgba(0,0,0,0.2); }
+    /* #submitButton { background-color: var(--submit-button-color); box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 2px 0 rgba(0,0,0,0.1), 0 4px 0 var(--submit-button-dark), 0 6px 0 rgba(0,0,0,0.1), 0 8px 0 rgba(0,0,0,0.1), 0 0 10px rgba(0,0,0,0.2); margin: var(--button-margin); } */ /* 삭제 */
+    /* #submitButton:hover { box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 3px 0 rgba(0,0,0,0.1), 0 5px 0 var(--submit-button-dark), 0 7px 0 rgba(0,0,0,0.1), 0 9px 0 rgba(0,0,0,0.1), 0 0 12px rgba(0,0,0,0.2); } */ /* 삭제 */
     .option { border: none; border-radius: var(--border-radius-medium); cursor: pointer; font-weight: 500; transition: all 0.15s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.2); padding: var(--option-padding-v) var(--option-padding-h); font-size: var(--option-font-size); margin: var(--button-margin); position: relative; overflow: hidden; background: radial-gradient(ellipse at 30% 30%, var(--option-color) 0%, var(--option-dark) 100%); color: white; text-align: center; transform: perspective(500px) rotateX(var(--option-3d-angle)); box-shadow: 0 6px 12px rgba(0,0,0,0.15), 0 3px 5px rgba(0,0,0,0.12), inset 0 -4px 5px rgba(0,0,0,0.2), inset 0 2px 4px rgba(255,255,255,0.5); min-width: var(--option-min-width); }
     .option .katex { font-size: var(--option-font-size); }
     .option::before { content: ''; position: absolute; width: 100%; height: 100%; background: radial-gradient(ellipse at 30% 30%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%); top: 0; left: 0; z-index: 2; }
@@ -636,7 +634,6 @@
       <div class="result-title">시험 결과</div>
       <div id="finalScoreDisplay" class="result-info"></div> <div id="answerTableContainer"></div>
       <div class="result-info" id="finalTime"></div>
-      <button class="btn" id="submitButton">결과전송</button>
       <div id="serverMessage" class="server-message"></div>
     </div>
   </div>
@@ -657,7 +654,7 @@
   const NEXT_BUTTON_TEXT = "다음문제";
   const PREV_BUTTON_TEXT = "이전문제";
   const COMPLETE_BUTTON_TEXT = "완료";
-  const SUBMIT_BUTTON_TEXT = "결과전송";
+  // const SUBMIT_BUTTON_TEXT = "결과전송"; // 삭제됨
   const RESULT_TITLE_TEXT = "시험 결과";
 
   const SUCCESS_MESSAGE = "성공: 데이터가 성공적으로 전송되었습니다.";
@@ -706,7 +703,7 @@
     shortAnswer: document.getElementById('shortAnswer'),
     prevButton: document.getElementById('prevButton'),
     nextButton: document.getElementById('nextButton'),
-    submitButton: document.getElementById('submitButton'),
+    // submitButton: document.getElementById('submitButton'), // 삭제됨
     finalScoreDisplay: document.getElementById('finalScoreDisplay'),
     answerTableContainer: document.getElementById('answerTableContainer'),
     finalTime: document.getElementById('finalTime'),
@@ -880,7 +877,7 @@
     }
   });
 
-  elements.nextButton.addEventListener('click', () => {
+  elements.nextButton.addEventListener('click', async () => { // '완료' 버튼에 전송 기능 통합
     pauseAndRecordStayTime();
     if (elements.nextButton.classList.contains('complete-button')) {
       const unanswered = [];
@@ -903,7 +900,10 @@
             return;
         }
       }
+      // 시험 결과 화면 표시
       endGame(true);
+      // 결과 전송 시도
+      await sendResultData(); // 결과 전송 함수 호출
     } else {
       if (currentQuestion < questions.length - 1) {
         currentQuestion++;
@@ -913,8 +913,90 @@
   });
 
   elements.startButton.addEventListener('click', () => { const name = elements.playerName.value.trim(); if(name === "") { alert("이름을 입력해주세요!"); return; } player = name; elements.startSection.style.display = "none"; elements.gameSection.style.display = "block"; timerFunctions.start(); resetGame(); loadQuestion(currentQuestion); });
-  async function sendDataWithRetry(url, data, { timeout = 5000, retries = 3 } = {}) { for (let attempt = 1; attempt <= retries; attempt++) { const controller = new AbortController(); const timer = setTimeout(() => controller.abort(), timeout); try { const response = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data), signal: controller.signal }); clearTimeout(timer); const contentType = response.headers.get("content-type"); if (response.ok && contentType && contentType.indexOf("application/json") !== -1) { return await response.json(); } else if (response.ok) { console.log("Server returned OK but not JSON:", await response.text()); return { success: true, message: "Data sent, but response format unclear." }; } else { console.error(`Server error: ${response.status} ${response.statusText}`); throw new Error(`${ERROR_MESSAGE} (Status: ${response.status})`); } } catch (error) { clearTimeout(timer); console.error(`Attempt ${attempt} failed:`, error); if (attempt === retries) { if (error.name === 'AbortError') throw new Error(NETWORK_ERROR + " (Timeout)"); throw error; } await new Promise(res => setTimeout(res, 1000 * Math.pow(2, attempt - 1))); } } }
-  elements.submitButton.addEventListener('click', async () => { const game = gameConfig.gameTitle; const finalScoreValue = score; const finalElapsedTimeValue = elapsedTime; if (!player) { alert("플레이어 이름 정보가 없습니다."); return; } elements.loadingSpinner.style.display = "flex"; elements.serverMessage.textContent = ""; elements.serverMessage.className = "server-message"; elements.submitButton.disabled = true; try { const dataToSend = { game: game, name: player, score: parseInt(finalScoreValue, 10), maxScore: questions.reduce((sum, q) => sum + (q.score || defaultScore), 0), elapsedTime: parseInt(finalElapsedTimeValue, 10) }; console.log("Sending data:", dataToSend); const result = await sendDataWithRetry("https://us-central1-record-f420d.cloudfunctions.net/report", dataToSend, { timeout: 8000, retries: 2 }); console.log("Server response:", result); elements.serverMessage.textContent = SUCCESS_MESSAGE; elements.serverMessage.classList.add("success"); } catch (error) { console.error("Submission failed:", error); elements.serverMessage.textContent = error.message || ERROR_MESSAGE; elements.serverMessage.classList.add("error"); elements.submitButton.disabled = false; } finally { elements.loadingSpinner.style.display = "none"; } });
+
+  async function sendDataWithRetry(url, data, { timeout = 5000, retries = 3 } = {}) {
+    for (let attempt = 1; attempt <= retries; attempt++) {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), timeout);
+      try {
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+          signal: controller.signal
+        });
+        clearTimeout(timer);
+        const contentType = response.headers.get("content-type");
+        if (response.ok && contentType && contentType.indexOf("application/json") !== -1) {
+          return await response.json();
+        } else if (response.ok) {
+          console.log("Server returned OK but not JSON:", await response.text());
+          return { success: true, message: "Data sent, but response format unclear." };
+        } else {
+          console.error(`Server error: ${response.status} ${response.statusText}`);
+          throw new Error(`${ERROR_MESSAGE} (Status: ${response.status})`);
+        }
+      } catch (error) {
+        clearTimeout(timer);
+        console.error(`Attempt ${attempt} failed:`, error);
+        if (attempt === retries) {
+          if (error.name === 'AbortError') throw new Error(NETWORK_ERROR + " (Timeout)");
+          throw error;
+        }
+        await new Promise(res => setTimeout(res, 1000 * Math.pow(2, attempt - 1)));
+      }
+    }
+  }
+
+  async function sendResultData() {
+    const game = gameConfig.gameTitle;
+    const finalScoreValue = score;
+    const finalElapsedTimeValue = elapsedTime;
+
+    if (!player) {
+      elements.serverMessage.textContent = "플레이어 이름 정보가 없습니다. 새로고침 후 다시 시도해주세요.";
+      elements.serverMessage.classList.add("error");
+      return;
+    }
+
+    elements.loadingSpinner.style.display = "flex";
+    elements.serverMessage.textContent = "";
+    elements.serverMessage.className = "server-message";
+
+    let sendSuccess = false;
+    let errorMessage = "";
+
+    try {
+      const dataToSend = {
+        game: game,
+        name: player,
+        score: parseInt(finalScoreValue, 10),
+        maxScore: questions.reduce((sum, q) => sum + (q.score || defaultScore), 0),
+        elapsedTime: parseInt(finalElapsedTimeValue, 10)
+      };
+      console.log("Sending data:", dataToSend);
+      const result = await sendDataWithRetry("https://us-central1-record-f420d.cloudfunctions.net/report", dataToSend, { timeout: 8000, retries: 2 });
+      console.log("Server response:", result);
+      elements.serverMessage.textContent = SUCCESS_MESSAGE;
+      elements.serverMessage.classList.add("success");
+      sendSuccess = true;
+    } catch (error) {
+      console.error("Submission failed:", error);
+      errorMessage = error.message || ERROR_MESSAGE;
+      elements.serverMessage.textContent = errorMessage;
+      elements.serverMessage.classList.add("error");
+      sendSuccess = false;
+    } finally {
+      elements.loadingSpinner.style.display = "none";
+    }
+
+    if (!sendSuccess) {
+      const retryConfirmation = confirm(`데이터 전송에 실패했습니다: ${errorMessage}\n다시 시도하시겠습니까?`);
+      if (retryConfirmation) {
+        await sendResultData(); // 재귀적으로 재시도
+      }
+    }
+  }
 
   function endGame(completed) {
     gameOver = true;
@@ -972,7 +1054,7 @@
     elements.finalScoreDisplay.innerHTML = `최종 점수: <strong style="color: var(--score-highlight-color); font-size: 1.2em;">${score}</strong>점 / ${maxPossibleScore}점`;
     elements.answerTableContainer.innerHTML = tableHTML;
     elements.finalTime.textContent = `총 소요 시간: ${timerFunctions.formatTime(elapsedTime)}`;
-    elements.submitButton.disabled = false;
+    // elements.submitButton.disabled = false; // 삭제됨
     elements.serverMessage.textContent = ''; elements.serverMessage.className = 'server-message';
   }
 
@@ -986,7 +1068,7 @@
     document.querySelector('#startSection .start-title').textContent = START_SCREEN_TITLE;
     elements.prevButton.textContent = PREV_BUTTON_TEXT;
     elements.nextButton.textContent = NEXT_BUTTON_TEXT;
-    elements.submitButton.textContent = SUBMIT_BUTTON_TEXT;
+    // elements.submitButton.textContent = SUBMIT_BUTTON_TEXT; // 삭제됨
     document.querySelector('#resultSection .result-title').textContent = RESULT_TITLE_TEXT;
     if (bannerURL) { elements.banner.style.display = "block"; elements.banner.innerHTML = `<img src="${bannerURL}" alt="배너">`; }
   };
